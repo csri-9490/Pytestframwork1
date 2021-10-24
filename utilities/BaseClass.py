@@ -1,5 +1,7 @@
+import main
 import inspect
 import logging
+import time
 
 import pytest
 from selenium.webdriver.common.by import By
@@ -9,6 +11,7 @@ from selenium.webdriver.support.select import Select
 
 
 @pytest.mark.usefixtures("setup")
+
 
 
 class BaseClass:
@@ -36,3 +39,13 @@ class BaseClass:
         #sel = Select(hmobj.gndr())
         sel = Select(locator)
         sel.select_by_visible_text(text)
+
+    def takescreenshots(self,driver):
+        fileName=str(round(time.time()*1000))+".png"
+        scrnshtpath = "/users/desktop/"
+        destfile = scrnshtpath + fileName
+        try:
+            driver.save_screenshot(scrnshtpath)
+            print("scrnshot saved to path")
+        except NotADirectoryError:
+            print("not a directry issues")

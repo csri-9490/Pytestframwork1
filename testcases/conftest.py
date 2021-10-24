@@ -19,9 +19,16 @@ def setup(request):
     global driver # to sync the driver of  setup method and capture screenshot
     browser_name=request.config.getoption("browser_name")
     if browser_name == "chrome":
-        driver = webdriver.Chrome(executable_path="D:/Selenium/browser/chromedriver.exe")
-        driver.get("https://rahulshettyacademy.com/angularpractice/")
+        options = webdriver.ChromeOptions()
+        options.add_experimental_option('excludeSwitches', ['enable-logging'])
+        # driver = webdriver.Chrome(options=options)
+        driver = webdriver.Chrome(executable_path="D:/Selenium/browser/chromedriver.exe",options=options)
 
+        # driver.get("https://rahulshettyacademy.com/angularpractice/")
+        # driver.get("http://121.241.54.185/MDDVICTORIAVIS/")
+        # driver.get("https://www.goibibo.com/")
+        # driver.get("https://www.amazon.in/")
+        driver.maximize_window()
     elif browser_name == "firefox":
         driver = webdriver.Firefox(executable_path="D:/Selenium/browser/geckodriver.exe")
         driver.get("https://rahulshettyacademy.com/angularpractice/")
@@ -30,8 +37,8 @@ def setup(request):
         print("ie browser")
 
     request.cls.driver=driver
-    yield
-    driver.close()
+    # yield
+    # driver.close()
 
 
 @pytest.mark.hookwrapper
@@ -62,5 +69,5 @@ def _capture_screenshot(name):
         driver.get_screenshot_as_file(name)
 
 
-
+#updated
 

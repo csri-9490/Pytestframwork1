@@ -2,6 +2,7 @@ import pytest
 from selenium.webdriver.support.select import Select
 
 from PageObjects.HomePage import HomePage
+# from testdata.HomePageData import HomePageData
 from testdata.HomePageData import HomePageData
 from utilities.BaseClass import BaseClass
 
@@ -38,9 +39,13 @@ class TestHomePage(BaseClass):
         self.driver.refresh() # to overcome two test data entry in one field same time, not cleaering previous entry data
 
 
+
     #@pytest.fixture(params=[("pranav","singh","Male"),("shruthi","reddy","Female")])
     #@pytest.fixture(params=[{"firstname":"jason","email":"csri","gender":"Male"},{"firstname":"shruthi","email":"beauty","gender":"Female"}])
-    @pytest.fixture(params=HomePageData.test_homepgae_data)
+    @pytest.fixture(params=HomePageData.test_HomePage_data)
+    # @pytest.fixture(params=HomePageData.getTestData("testcase2"))
     def getdata(self,request):
-            return request.param
+             return request.param
+
+
 

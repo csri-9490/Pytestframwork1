@@ -11,10 +11,12 @@ class HomePage:
 
     shop=(By.CSS_SELECTOR,"a[href*='shop']")
 
+
     name = (By.CSS_SELECTOR, "[name='name']")
     email = (By.NAME, "email")
     id = (By.ID, "exampleCheck1")
     gndr = (By.ID, "exampleFormControlSelect1")
+
     sbmit = (By.XPATH, "//input[@value='Submit']")
     alrt = (By.CSS_SELECTOR,"[class*='alert-success']")
 

@@ -11,7 +11,7 @@ from selenium.webdriver.common.by import By
 class Testone(BaseClass):
     def test_n2n(self):
          homepage=HomePage(self.driver)
-         #homepage.shopitems().click()  ---for thise we are halding click in checkout page  class and shpitem method and returned as  checkut,same passing here
+         #homepage.shopitems().click()  ---for thise we are handling click in checkout page  class and shpitem method and returned as  checkut,same passing here
          #self.driver.find_element_by_css_selector("a[href*='shop']").click()
          checkut= homepage.shopitems()
          #checkut=checkout(self.driver) #moved this to home page
@@ -45,6 +45,6 @@ class Testone(BaseClass):
 
          assert "Success! Thank you!" in successText
 
-         self.driver.get_screenshot_as_file("screen.png")
+         # self.driver.get_screenshot_as_file("screen.png")
 
 
