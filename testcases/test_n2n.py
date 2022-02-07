@@ -1,11 +1,11 @@
 import pytest
 
-from PageObjects.CheckOut import checkout
+from PageObjects.CheckOut import Che
 from PageObjects.HomePage import HomePage
 from utilities.BaseClass import BaseClass
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.common.by import By
+# from selenium.webdriver.common.by import By
 
 
 class Testone(BaseClass):
@@ -29,6 +29,7 @@ class Testone(BaseClass):
               if productName == "Blackberry":
                    #product.checkut.getberrys().click()
                    product.find_element_by_xpath("div/button").click()
+
                    #Add item into cart
 
 

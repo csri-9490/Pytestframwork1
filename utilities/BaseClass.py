@@ -11,6 +11,7 @@ from selenium.webdriver.support.select import Select
 
 
 @pytest.mark.usefixtures("setup")
+@pytest.mark.usefixtures("tdat")
 
 
 
